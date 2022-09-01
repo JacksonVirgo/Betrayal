@@ -15,8 +15,6 @@ function EditableSpan({ defaultValue, onChangedValue, disabled }: CellProps) {
 	const [value, setValue] = useState<string>();
 	const handleValue = (val: string) => {
 		setValue(val);
-
-		console.log(val);
 	};
 	return <input defaultValue={defaultValue} onChange={(e) => handleValue(e.target.value)} className="bg-inherit mr-2" disabled={!!disabled} spellCheck={false} />;
 }
@@ -33,20 +31,6 @@ type DropDownProps = {
 	currentSelected: string;
 	options: string[];
 };
-function DropDown({ currentSelected, options }: DropDownProps) {
-	return (
-		<select className="bg-inherit mr-2 ">
-			{options.map((val: string, index) => {
-				return (
-					<option key={index} selected={val === currentSelected} value={val}>
-						{val}
-					</option>
-				);
-			})}
-		</select>
-	);
-}
-
 function createPlayerRow({ gameId, number, name, alignment, role }: Player): any[] {
 	let result = [number, <EditableSpan defaultValue={name} />, <AlignmentSelect defaultValue={alignment} />, <RoleSelect defaultValue={role} />];
 	return result;

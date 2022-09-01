@@ -19,8 +19,12 @@ export function AlignmentSelect({ onChangedValue, defaultValue }: AlignmentSelec
 	return (
 		<select className="bg-inherit mr-2" onChange={(e) => handleChange(e.target.value as Alignment | Unknown)}>
 			<option selected={initialFocus === '?'}>?</option>
-			{alignmentList.map((align) => {
-				return <option selected={initialFocus === align}>{align}</option>;
+			{alignmentList.map((align, index) => {
+				return (
+					<option key={index} selected={initialFocus === align}>
+						{align}
+					</option>
+				);
 			})}
 		</select>
 	);
