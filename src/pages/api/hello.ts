@@ -1,7 +1,7 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 import axios from 'axios';
 import { setCookie } from '@/utils/cookie';
-import UserSchema from '@/../backend/database/User';
+import UserSchema from '@/backend/database/User';
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
 	console.log('Hello.');

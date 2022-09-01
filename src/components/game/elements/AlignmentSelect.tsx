@@ -1,9 +1,6 @@
-import { Alignment, Role, Unknown } from '@/backend/database/Role';
+import { Alignment, Unknown } from '@/backend/database/Role';
 import { useState } from 'react';
-
-interface ElementProps {
-	onChangedValue?: (value: string) => void;
-}
+import { ElementProps } from '.';
 
 const alignmentList: Alignment[] = ['Good', 'Neutral', 'Evil'];
 interface AlignmentSelectProps extends ElementProps {
