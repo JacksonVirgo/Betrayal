@@ -38,7 +38,7 @@ function DropDown({ currentSelected, options }: DropDownProps) {
 		<select className="bg-inherit mr-2 ">
 			{options.map((val: string, index) => {
 				return (
-					<option selected={val === currentSelected} value={val}>
+					<option key={index} selected={val === currentSelected} value={val}>
 						{val}
 					</option>
 				);

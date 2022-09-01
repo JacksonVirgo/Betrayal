@@ -40,8 +40,12 @@ export function RoleSelect({ onChangedValue, defaultValue }: RoleSelectProps) {
 	return (
 		<select className="bg-inherit mr-2" onChange={(e) => handleChange(e.target.value as string | Unknown)}>
 			<option selected={initialFocus === '?'}>?</option>
-			{roleList.map((align) => {
-				return <option selected={initialFocus === align}>{align}</option>;
+			{roleList.map((align, index) => {
+				return (
+					<option key={index} selected={initialFocus === align}>
+						{align}
+					</option>
+				);
 			})}
 		</select>
 	);
